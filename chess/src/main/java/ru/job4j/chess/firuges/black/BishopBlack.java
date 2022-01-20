@@ -38,13 +38,8 @@ public class BishopBlack implements Figure {
     }
 
     public boolean isDiagonal(Cell source, Cell dest) {
-        boolean rsl = false;
-        if (dest.getX() >= 0 && dest.getY() >= 0 && dest.getX() <= 8 && dest.getY() <= 8
-                && Math.abs(source.getX() - dest.getX()) == Math.abs(source.getY() - dest.getY())) {
-            rsl = true;
-        }
-            return rsl;
-}
+        return Math.abs(source.getX() - dest.getX()) == Math.abs(source.getY() - dest.getY());
+    }
 
     @Override
     public Figure copy(Cell dest) {
